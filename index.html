@@ -20,7 +20,7 @@
         <span class="text-[18px] sm:text-[20px] md:text-[22px] italic font-medium text-blue-900">
           Cebu Eastern College Office
         </span>
-      </div>
+    </div>
 
       <!-- Right side (desktop links) -->
       <div id="menuLinks" class="hidden sm:flex items-center space-x-0 text-gray-700 text-[14px] sm:text-[15px] md:text-[16px]">
@@ -35,7 +35,7 @@
 
     <!-- Mobile dropdown -->
     <div id="mobileMenu" class="hidden flex-col sm:hidden border-t border-gray-200 bg-white text-gray-700 text-base">
-      <a href="priv" class="block px-6 py-3 hover:bg-gray-100">Privacy</a>
+      <a href="#priv" class="block px-6 py-3 hover:bg-gray-100">Privacy</a>
       <a href="#info" class="block px-6 py-3 hover:bg-gray-100">Information</a>
       <a href="#cont" class="block px-6 py-3 hover:bg-gray-100">Contact Us</a>
     </div>
@@ -160,15 +160,22 @@
 
 
   <script>
-    // Get button and menu
-    const menuBtn = document.getElementById('menuBtn');
-    const mobileMenu = document.getElementById('mobileMenu');
+  const menuBtn = document.getElementById('menuBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+  const mobileLinks = mobileMenu.querySelectorAll('a');
 
-    // Toggle show/hide
-    menuBtn.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
+  menuBtn.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+  });
+
+  // Close menu when clicking a link
+  mobileLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu.classList.add('hidden');
     });
-  </script>
+  });
+</script>
+
 
 </body>
 </html>
